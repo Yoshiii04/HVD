@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Tenor+Sans&display=swap');
+/* General body styles */
+body {
+    margin: 0; /* Remove default margin */
+    background-color: #7f9c6d;  /* Background color for the body */
+    font-family: "Satisfy", sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack the navbar and content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+/* Navbar settings */
+header {
+    position: fixed; /* Fixed position so it stays at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure the navbar spans the full width */
+    background-color: #7f9c6d;  /* Navbar background color */
+    padding: 20px 0; /* Padding for the navbar */
+    z-index: 10; /* Make sure it stays above other elements */
+}
+
+/* Centered navigation bar */
+.nav {
+    display: flex;
+    justify-content: center;  /* Centers the buttons horizontally */
+    align-items: center;      /* Ensures the buttons are vertically centered */
+    gap: 30px;                /* Adds space between the buttons */
+}
+
+/* Style for each button */
+.nav-btn {
+    font-family: "Tenor Sans", serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #b4d3a0;  /* Button background color */
+    color: #8e424c;             /* Button text color */
+    border: none;
+    padding: 10px 30px;         /* Padding around the text */
+    font-size: 30px;            /* Font size */
+    cursor: pointer;           /* Change cursor to pointer on hover */
+    border-radius: 5px;         /* Rounded corners */
+    transition: background-color 0.3s;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect for buttons */
+.nav-btn:hover {
+    background-color: #f96e74;  /* Lighter background color on hover */
+}
+
+/* Space below the navbar to prevent overlap with content */
+body {
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
+/* Card container */
+.card {
+    width: 500px;
+    height: 500px;
+    perspective: 1000px; /* Adds depth for 3D effect */
+    cursor: pointer;
+    margin: 100px auto; /* Center the card horizontally and give some space from the top */
+}
+
+/* Card inner wrapper (will rotate) */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Front side of the card */
+.card-front {
+    background-color: #f6eee2;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back side */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Back side of the card */
+.card-back {
+    background-color: #8e424c;
+    color: #f6eee2;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg); /* Initially rotated to the back */
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When the card is clicked, rotate it to show the back */
+.card.open .card-inner {
+    transform: rotateY(180deg);
+}

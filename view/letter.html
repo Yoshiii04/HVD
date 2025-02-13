@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/letter.css">
+    <title>Letter Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    
+</head> 
+<body>
+    <header>
+    <nav class = "nav">
+        <button class="nav-btn" id="home" onclick="window.location.href='main.html'">Home</button>
+        <button class="nav-btn" id="pics" onclick="window.location.href='pics.html'">Pics</button>
+        <button class="nav-btn" id="letter" onclick="window.location.href='letter.html'">Letter</button>   
+    </nav>
+</header>
+
+    <div class="card" onclick="toggleCard()">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../public/images/Valentine's challenge (500 x 500 px).png" alt="cover">
+            </div>
+            <div class="card-back">
+                <p style="text-align: left; font-size: 20px; line-height: 1.5; margin: 20px;">Dear my Pookeh, <br>
+        
+                    Since today is Valentine's Day, I wanted to create this for you, even though I kind of crammed it! I truly appreciate your patience and kindness. You always manage to put a smile on my face and make me feel better during stressful times.
+                    
+                    I cherish every moment I spend with you, and I look forward to our future together. I can't wait to create more wonderful memories with you.
+                    
+                    I love you always. <br> 
+                    
+                    From your Pookeh</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard() {
+    const card = document.querySelector('.card');
+    card.classList.toggle('open');
+}
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Tenor+Sans&display=swap');
+/* Header settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: #f6eee2;  /* Optional: background color */
+}
+
+header {
+    display: flex;
+    z-index: 3;
+    background-color: #7f9c6d;  /* Dark background for the navbar */
+    padding: 30px 0;  /* Some padding for the navbar */
+    justify-content: center;  /* Centers the buttons horizontally */
+    align-items: center;      /* Ensures the buttons are vertically centered (in case the height is more than the buttons) */
+}
+
+/* Centered navigation bar using Flexbox */
+.nav {
+    display: flex;
+    z-index: 3;
+    justify-content: center;  /* Centers the buttons horizontally */
+    align-items: center;      /* Ensures the buttons are vertically centered (in case the height is more than the buttons) */
+    gap: 30px;                /* Adds space between the buttons */
+}
+
+/* Style for each button */
+.nav-btn {
+    font-family: "Tenor Sans", serif;
+    z-index: 3;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #b4d3a0;  /* Button background color */
+    color: #8e424c;               /* Button text color */
+    border: none;
+    padding: 10px 30px;         /* Padding around the text */
+    font-size: 30px;            /* Font size */
+    cursor: pointer;           /* Change cursor to pointer on hover */
+    border-radius: 5px;         /* Rounded corners */
+    transition: background-color 0.3s;  /* Smooth transition for hover effect */
+    gap: 40px; 
+}
+
+/* Hover effect for buttons */
+.nav-btn:hover {
+    background-color: #f96e74;  /* Lighter background color on hover */
+}
+
+.headertext {
+    display: flex;
+    justify-content: center;  /* Centers the buttons horizontally */
+    align-items: center;      /* Ensures the buttons are vertically centered (in case the height is more than the buttons) */
+    text-align: center;       /* Centers the text horizontally */
+    background-color: #f6eee2;  /* Optional: background color */
+}
+
+.text{
+    font-family: "Satisfy", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f96e74; 
+    font-size: 30px;
+    position: relative;
+    width: 500px;  /* Set the width of the container */
+    height: 500px; /* Set the height of the container */
+    margin: 100px auto; /* Optionally center the container horizontally in the page */
+   
+}
+
+
+.image-container {
+    position: relative;
+    width: 500px;  /* Set the width of the container */
+    height: 500px; /* Set the height of the container */
+    margin: 100px auto; /* Optionally center the container horizontally in the page */
+
+}
+
+/* Style for the first image */
+.image-container img:first-child {
+    position: absolute;
+    bottom: 30%;
+    
+    left: 50%; /* Horizontally center */
+    z-index: 2; /* Ensures this image is at the top */
+    width: 100%;  /* Make sure it fills the container */
+    height: 100%; /* Ensure it stays within the container size */
+}
+
+#first-image {
+    transform: rotate(35deg); /* Rotate the image 90 degrees clockwise */
+}
+/* Style for the second image */
+#moveable-image {
+    position: absolute;
+    top: 50%;  /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjusts the position so the image is perfectly centered */
+    z-index: 1; /* Ensures this image is on the bottom */
+    width: 100%;    /* Maintain aspect ratio */
+    height: 100%;   /* Maintain aspect ratio */
+    animation: spin 3s infinite linear;  /* Add animation: spin for 3 seconds, infinite loop */
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg); /* Start from 0 degrees */
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg); /* Rotate to 360 degrees (one full spin) */
+    }
+}
