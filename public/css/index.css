@@ -1,0 +1,73 @@
+/* Import the Satisfy font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Tenor+Sans&display=swap');
+
+/* Typewriter heading */
+.typewriter h1 {
+    font-family: "Tenor Sans", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center; /* Horizontally center the text */
+    animation: jump 2s ease-in-out infinite; /* Apply the jump animation */
+}
+
+/* The jump animation */
+@keyframes jump {
+    0% {
+        transform: translateY(0); /* Start at the normal position */
+    }
+    30% {
+        transform: translateY(-20px); /* Move the element up */
+    }
+    50% {
+        transform: translateY(0); /* Return to the normal position */
+    }
+    70% {
+        transform: translateY(-20px); /* Move the element up again */
+    }
+    100% {
+        transform: translateY(0); /* Return to the normal position */
+    }
+}
+
+
+body {
+    background-color: #f6eee2; /* Set the background color of the page */
+}
+
+/* Container to hold the images */
+.image-container {
+    position: relative;
+    width: 500px;  /* Set the width of the container */
+    height: 500px; /* Set the height of the container */
+    margin: 150px auto; /* Optionally center the container horizontally in the page */
+
+}
+
+/* Style for the first image */
+.image-container img:first-child {
+    position: absolute;
+    top: 50%;  /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%);  /* Adjusts the position so the image is perfectly centered */
+    z-index: 2; /* Ensures this image is at the top */
+    width: 100%;  /* Make sure it fills the container */
+    height: 100%; /* Ensure it stays within the container size */
+}
+
+/* Style for the second image */
+#moveable-image {
+    position: absolute;
+    top: 50%;  /* Vertically center */
+    left: 70%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjusts the position so the image is perfectly centered */
+    z-index: 1; /* Ensures this image is on the bottom */
+    width: 100%;    /* Maintain aspect ratio */
+    height: 100%;   /* Maintain aspect ratio */
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+/* Move the image to the right when hovered */
+#moveable-image:hover {
+    transform: translate(-50%, -50%) translateX(50px); /* Move the image 50px to the right */
+}
+
